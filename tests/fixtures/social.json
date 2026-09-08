@@ -1,0 +1,126 @@
+{
+  "extract_discord_invites": [
+    {
+      "input": "Join us at https://discord.gg/abc123 or discord.com/invite/xyz789",
+      "want": ["abc123", "xyz789"]
+    },
+    {
+      "input": "Check discord.gg/myserver for updates",
+      "want": ["myserver"]
+    },
+    {
+      "input": "No discord links here",
+      "want": []
+    }
+  ],
+  "extract_telegram_links": [
+    {
+      "input": "Join https://t.me/mychannel or telegram.me/mygroup",
+      "want": ["mychannel", "mygroup"]
+    },
+    {
+      "input": "Follow us at t.me/official_channel",
+      "want": ["official_channel"]
+    },
+    {
+      "input": "No telegram here",
+      "want": []
+    }
+  ],
+  "extract_twitter_links": [
+    {
+      "input": "Follow https://twitter.com/elonmusk and https://x.com/openai",
+      "want": ["https://twitter.com/elonmusk", "https://x.com/openai"]
+    },
+    {
+      "input": "Check twitter.com/user123/status/456",
+      "want": ["https://twitter.com/user123/status/456"]
+    },
+    {
+      "input": "No twitter links",
+      "want": []
+    }
+  ],
+  "extract_youtube_links": [
+    {
+      "input": "Watch https://youtube.com/watch?v=abc123 or https://youtu.be/xyz789",
+      "want": ["https://youtube.com/watch?v=abc123", "https://youtu.be/xyz789"]
+    },
+    {
+      "input": "Channel: https://www.youtube.com/channel/UCxyz",
+      "want": ["https://www.youtube.com/channel/UCxyz"]
+    },
+    {
+      "input": "No youtube",
+      "want": []
+    }
+  ],
+  "extract_instagram_links": [
+    {
+      "input": "Follow https://instagram.com/user123 and https://www.instagram.com/brand",
+      "want": ["https://instagram.com/user123", "https://www.instagram.com/brand"]
+    },
+    {
+      "input": "Post: instagram.com/p/abc123",
+      "want": ["https://instagram.com/p/abc123"]
+    },
+    {
+      "input": "No instagram",
+      "want": []
+    }
+  ],
+  "extract_tiktok_links": [
+    {
+      "input": "Check https://tiktok.com/@user123 for videos",
+      "want": ["https://tiktok.com/@user123"]
+    },
+    {
+      "input": "Video: https://www.tiktok.com/@creator/video/123456",
+      "want": ["https://www.tiktok.com/@creator/video/123456"]
+    },
+    {
+      "input": "No tiktok",
+      "want": []
+    }
+  ],
+  "extract_reddit_links": [
+    {
+      "input": "Visit https://reddit.com/r/programming and reddit.com/u/user123",
+      "want": ["https://reddit.com/r/programming", "https://reddit.com/u/user123"]
+    },
+    {
+      "input": "Post: https://www.reddit.com/r/python/comments/abc123",
+      "want": ["https://www.reddit.com/r/python/comments/abc123"]
+    },
+    {
+      "input": "No reddit",
+      "want": []
+    }
+  ],
+  "extract_social_links": [
+    {
+      "input": "Discord: discord.gg/test Telegram: t.me/channel Twitter: twitter.com/user",
+      "want": {
+        "discord": ["test"],
+        "telegram": ["channel"],
+        "twitter": ["https://twitter.com/user"],
+        "youtube": [],
+        "instagram": [],
+        "tiktok": [],
+        "reddit": []
+      }
+    },
+    {
+      "input": "No social links here",
+      "want": {
+        "discord": [],
+        "telegram": [],
+        "twitter": [],
+        "youtube": [],
+        "instagram": [],
+        "tiktok": [],
+        "reddit": []
+      }
+    }
+  ]
+}

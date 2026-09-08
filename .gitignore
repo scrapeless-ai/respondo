@@ -1,0 +1,39 @@
+# Claude Code
+.claude/
+CLAUDE.md
+AGENTS.md
+
+# Playwright MCP
+.playwright-mcp/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+eggs/
+.eggs/
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+.env
+.env.*
+!.env.example
+coverage.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

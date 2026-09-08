@@ -1,0 +1,116 @@
+{
+  "extract_recaptcha_sitekey": [
+    {
+      "input": "<div class=\"g-recaptcha\" data-sitekey=\"6LcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxAA\"></div>",
+      "want": ["6LcxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxAA"]
+    },
+    {
+      "input": "<script src=\"https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI\"></script>",
+      "want": ["6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"]
+    },
+    {
+      "input": "grecaptcha.execute('6LdyC2cUAAAAAJA', {action: 'submit'})",
+      "want": ["6LdyC2cUAAAAAJA"]
+    },
+    {
+      "input": "grecaptcha.render('recaptcha', {sitekey: '6LcABCDEFGHIJKLMNOPQRSTUVWXYZ123456789ab'})",
+      "want": ["6LcABCDEFGHIJKLMNOPQRSTUVWXYZ123456789ab"]
+    },
+    {
+      "input": "<div>No captcha here</div>",
+      "want": []
+    }
+  ],
+  "extract_turnstile_sitekey": [
+    {
+      "input": "<div class=\"cf-turnstile\" data-sitekey=\"0x4AAAAAAADnPIDROrmt1Wwj\"></div>",
+      "want": ["0x4AAAAAAADnPIDROrmt1Wwj"]
+    },
+    {
+      "input": "turnstile.render('#container', {sitekey: '0x4AAAAAAAAjq_vY_Q8j4AAA'})",
+      "want": ["0x4AAAAAAAAjq_vY_Q8j4AAA"]
+    },
+    {
+      "input": "<script src=\"https://challenges.cloudflare.com/turnstile/v0/api.js?render=0x4AAAAAAA\"></script>",
+      "want": ["0x4AAAAAAA"]
+    },
+    {
+      "input": "No turnstile here",
+      "want": []
+    }
+  ],
+  "extract_hcaptcha_sitekey": [
+    {
+      "input": "<div class=\"h-captcha\" data-sitekey=\"10000000-ffff-ffff-ffff-000000000001\"></div>",
+      "want": ["10000000-ffff-ffff-ffff-000000000001"]
+    },
+    {
+      "input": "<script src=\"https://hcaptcha.com/1/api.js?sitekey=a5f74b19-9e45-40e0-b45d-47ff91b7a6c2\"></script>",
+      "want": ["a5f74b19-9e45-40e0-b45d-47ff91b7a6c2"]
+    },
+    {
+      "input": "hcaptcha.render('captcha', {sitekey: 'b5f74b19-9e45-40e0-b45d-47ff91b7a6c2'})",
+      "want": ["b5f74b19-9e45-40e0-b45d-47ff91b7a6c2"]
+    },
+    {
+      "input": "No hcaptcha here",
+      "want": []
+    }
+  ],
+  "contains_recaptcha": [
+    {
+      "input": "<div class=\"g-recaptcha\" data-sitekey=\"6Lc\"></div>",
+      "want": true
+    },
+    {
+      "input": "<script src=\"https://www.google.com/recaptcha/api.js\"></script>",
+      "want": true
+    },
+    {
+      "input": "grecaptcha.ready(function() {})",
+      "want": true
+    },
+    {
+      "input": "<div>No captcha</div>",
+      "want": false
+    }
+  ],
+  "contains_turnstile": [
+    {
+      "input": "<div class=\"cf-turnstile\"></div>",
+      "want": true
+    },
+    {
+      "input": "<script src=\"https://challenges.cloudflare.com/turnstile/v0/api.js\"></script>",
+      "want": true
+    },
+    {
+      "input": "<div>No captcha</div>",
+      "want": false
+    }
+  ],
+  "contains_hcaptcha": [
+    {
+      "input": "<div class=\"h-captcha\"></div>",
+      "want": true
+    },
+    {
+      "input": "<script src=\"https://hcaptcha.com/1/api.js\"></script>",
+      "want": true
+    },
+    {
+      "input": "<div>No captcha</div>",
+      "want": false
+    }
+  ],
+  "extract_captcha_params": [
+    {
+      "input": "<div class=\"g-recaptcha\" data-sitekey=\"6LcABC123\"></div><div class=\"cf-turnstile\" data-sitekey=\"0x4AAA\"></div>",
+      "want": {
+        "recaptcha": ["6LcABC123"],
+        "turnstile": ["0x4AAA"],
+        "hcaptcha": []
+      }
+    }
+  ]
+}

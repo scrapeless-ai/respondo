@@ -1,0 +1,82 @@
+{
+  "extract_eth_addresses": [
+    {
+      "input": "Send to 0x742d35Cc6634C0532925a3b844Bc9e7595f1dE2B",
+      "want": ["0x742d35Cc6634C0532925a3b844Bc9e7595f1dE2B"]
+    },
+    {
+      "input": "Addresses: 0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B and 0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe",
+      "want": ["0xAb5801a7D398351b8bE11C439e05C5B3259aeC9B", "0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe"]
+    },
+    {
+      "input": "Not an address: 0x123",
+      "want": []
+    }
+  ],
+  "extract_btc_addresses": [
+    {
+      "input": "Legacy: 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2",
+      "want": ["1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"]
+    },
+    {
+      "input": "SegWit: bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
+      "want": ["bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq"]
+    },
+    {
+      "input": "Script: 3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+      "want": ["3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy"]
+    },
+    {
+      "input": "No bitcoin here",
+      "want": []
+    }
+  ],
+  "extract_sol_addresses": [
+    {
+      "input": "Solana: 7EcDhSYGxXyscszYEp35KHN8vvw3svAuLKTzXwCFLtV",
+      "want": ["7EcDhSYGxXyscszYEp35KHN8vvw3svAuLKTzXwCFLtV"]
+    },
+    {
+      "input": "Address: 4fYNw3dojWmQ4dXtSGE9epjRGy9pFSx62YypT7avPYvA",
+      "want": ["4fYNw3dojWmQ4dXtSGE9epjRGy9pFSx62YypT7avPYvA"]
+    },
+    {
+      "input": "No solana here",
+      "want": []
+    }
+  ],
+  "extract_ens_names": [
+    {
+      "input": "Contact vitalik.eth for info",
+      "want": ["vitalik.eth"]
+    },
+    {
+      "input": "Names: alice.eth, bob.eth, and charlie.eth",
+      "want": ["alice.eth", "bob.eth", "charlie.eth"]
+    },
+    {
+      "input": "No ENS names",
+      "want": []
+    }
+  ],
+  "extract_crypto_addresses": [
+    {
+      "input": "ETH: 0x742d35Cc6634C0532925a3b844Bc9e7595f1dE2B BTC: 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2",
+      "want": {
+        "eth": ["0x742d35Cc6634C0532925a3b844Bc9e7595f1dE2B"],
+        "btc": ["1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"],
+        "sol": [],
+        "ens": []
+      }
+    },
+    {
+      "input": "No crypto addresses",
+      "want": {
+        "eth": [],
+        "btc": [],
+        "sol": [],
+        "ens": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "normalize_space": [
+    {
+      "s": "  a  b   c  ",
+      "want": "a b c"
+    },
+    {
+      "s": "line1\n line2\tline3",
+      "want": "line1 line2 line3"
+    }
+  ],
+  "strip_tags": [
+    {
+      "s": "<p>Hello <b>world</b></p>",
+      "want": "Hello world"
+    },
+    {
+      "s": "<div>Hi<br>There</div>",
+      "want": "Hi There"
+    }
+  ],
+  "unescape_html": [
+    {
+      "s": "Tom &amp; Jerry",
+      "want": "Tom & Jerry"
+    },
+    {
+      "s": "5 &lt; 7 &#x21;",
+      "want": "5 < 7 !"
+    }
+  ],
+  "regex_first": [
+    {
+      "s": "abc123def",
+      "pattern": "(\\d+)",
+      "want": "123"
+    },
+    {
+      "s": "abc",
+      "pattern": "(\\d+)",
+      "want": ""
+    }
+  ],
+  "regex_all": [
+    {
+      "s": "v1 v2 v3",
+      "pattern": "v(\\d)",
+      "want": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ]
+}

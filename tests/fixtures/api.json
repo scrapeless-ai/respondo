@@ -1,0 +1,18 @@
+{
+  "extract_api_endpoints": [
+    {"input": "\"/api/v1/users\"", "want": ["/api/v1/users"]},
+    {"input": "https://api.example.com/api/v2/data", "want": ["https://api.example.com/api/v2/data"]},
+    {"input": "\"/rest/products\"", "want": ["/rest/products"]},
+    {"input": "no api endpoints", "want": []}
+  ],
+  "extract_graphql_endpoints": [
+    {"input": "\"/graphql\"", "want": ["/graphql"]},
+    {"input": "fetch('/api/gql')", "want": ["/api/gql"]},
+    {"input": "no graphql", "want": []}
+  ],
+  "extract_websocket_urls": [
+    {"input": "wss://example.com/socket", "want": ["wss://example.com/socket"]},
+    {"input": "ws://localhost:8080/ws", "want": ["ws://localhost:8080/ws"]},
+    {"input": "no websocket", "want": []}
+  ]
+}

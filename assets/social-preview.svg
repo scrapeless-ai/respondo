@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f14"/>
+      <stop offset="50%" style="stop-color:#1a1b26"/>
+      <stop offset="100%" style="stop-color:#1e3a3a"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <filter id="iconShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#f97316" flood-opacity="0.4"/>
+    </filter>
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bgGrad)"/>
+
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#10b981" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1150" cy="150" r="200" fill="#10b981" fill-opacity="0.08"/>
+  <circle cx="130" cy="500" r="150" fill="#f97316" fill-opacity="0.06"/>
+  <circle cx="1000" cy="550" r="120" fill="#0d9488" fill-opacity="0.05"/>
+
+  <!-- App Icon - centered top -->
+  <g transform="translate(540, 100)" filter="url(#iconShadow)">
+    <rect width="200" height="200" rx="44" fill="url(#iconGrad)"/>
+    <g transform="translate(34, 43)">
+      <path d="M 46 0 L 15 57 L 46 114" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.95"/>
+      <path d="M 86 0 L 117 57 L 86 114" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.95"/>
+      <circle cx="66" cy="57" r="12" fill="#ffffff" fill-opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="640" y="380" font-family="Arial Black, Helvetica, sans-serif" font-size="96" font-weight="900" fill="#10b981" text-anchor="middle" filter="url(#textGlow)">Respondo</text>
+
+  <!-- Subtitle -->
+  <text x="640" y="440" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" fill="#9ca3af" text-anchor="middle">Web scraping, text extraction &amp; AI-powered parsing for Python</text>
+
+  <!-- Feature badges - centered -->
+  <g transform="translate(340, 490)">
+    <rect width="120" height="44" rx="22" fill="#282a36" stroke="#3f4255" stroke-width="1"/>
+    <text x="60" y="29" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="500" fill="#e4e4e7" text-anchor="middle">Zero Deps</text>
+
+    <rect x="135" width="115" height="44" rx="22" fill="#282a36" stroke="#3f4255" stroke-width="1"/>
+    <text x="192.5" y="29" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="500" fill="#e4e4e7" text-anchor="middle">Type-Safe</text>
+
+    <rect x="265" width="115" height="44" rx="22" fill="#0d4a4a" stroke="#0d9488" stroke-width="1"/>
+    <text x="322.5" y="29" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#2dd4bf" text-anchor="middle">AI Parser</text>
+
+    <rect x="395" width="140" height="44" rx="22" fill="#282a36" stroke="#3f4255" stroke-width="1"/>
+    <text x="465" y="29" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="500" fill="#e4e4e7" text-anchor="middle">30+ Functions</text>
+  </g>
+
+  <!-- pip install -->
+  <rect x="440" y="560" width="400" height="50" rx="25" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="640" y="593" font-family="Consolas, Monaco, monospace" font-size="20" fill="#8b949e" text-anchor="middle">$ pip install respondo</text>
+</svg>

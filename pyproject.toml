@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "respondo"
+dynamic = ["version"]
+description = "Respondo by Scrapeless: zero-dependency web-response extraction, structured data transformations and CLI."
+readme = "README.pypi.md"
+requires-python = ">=3.9"
+authors = [{ name = "Respondo Maintainers" }]
+keywords = [
+  "http", "scraping", "parsing", "text", "json", "html",
+  "encoding", "hashing", "crypto", "utilities", "llm", "ai",
+  "captcha", "bot-protection", "web-scraping"
+]
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Text Processing",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/scrapeless-ai/respondo"
+Repository = "https://github.com/scrapeless-ai/respondo"
+Issues = "https://github.com/scrapeless-ai/respondo/issues"
+
+[project.scripts]
+respondo = "respondo_cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["respondo", "respondo_cli", "respondo_batch", "_respondo_version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "_respondo_version.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["textparse*", "jsonparse*", "responseutil*", "htmlparse*", "ai*", "botprotection*", "cryptoutil*", "webparse*"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["demo_*.py", "*.pyc", "__pycache__"]

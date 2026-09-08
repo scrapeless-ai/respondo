@@ -1,0 +1,26 @@
+{
+  "extract_ipv4": [
+    {"input": "Server: 192.168.1.1", "want": ["192.168.1.1"]},
+    {"input": "IPs: 10.0.0.1 and 172.16.0.1", "want": ["10.0.0.1", "172.16.0.1"]},
+    {"input": "no ips here", "want": []}
+  ],
+  "extract_ipv6": [
+    {"input": "IPv6: 2001:0db8:85a3:0000:0000:8a2e:0370:7334", "want": ["2001:0db8:85a3:0000:0000:8a2e:0370:7334"]},
+    {"input": "no ipv6", "want": []}
+  ],
+  "extract_domains": [
+    {"input": "Visit example.com or test.org", "want": ["example.com", "test.org"]},
+    {"input": "API at api.example.com", "want": ["api.example.com"]},
+    {"input": "no domains", "want": []}
+  ],
+  "extract_uuids": [
+    {"input": "ID: 550e8400-e29b-41d4-a716-446655440000", "want": ["550e8400-e29b-41d4-a716-446655440000"]},
+    {"input": "Multiple: a1b2c3d4-e5f6-7890-abcd-ef1234567890 and 12345678-1234-1234-1234-123456789abc", "want": ["a1b2c3d4-e5f6-7890-abcd-ef1234567890", "12345678-1234-1234-1234-123456789abc"]},
+    {"input": "no uuids", "want": []}
+  ],
+  "extract_mac_addresses": [
+    {"input": "MAC: 00:1A:2B:3C:4D:5E", "want": ["00:1A:2B:3C:4D:5E"]},
+    {"input": "Device: AA-BB-CC-DD-EE-FF", "want": ["AA-BB-CC-DD-EE-FF"]},
+    {"input": "no mac", "want": []}
+  ]
+}

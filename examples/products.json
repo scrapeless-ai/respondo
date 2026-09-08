@@ -1,0 +1,6 @@
+{
+  "products": [
+    {"name": "Tea", "price": 12.5, "tags": ["green", "organic"]},
+    {"name": "Coffee", "price": 18.0, "tags": ["whole-bean"]}
+  ]
+}

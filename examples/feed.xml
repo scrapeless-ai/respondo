@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://example.test/">
+  <title>Catalog updates</title><link href="/"/>
+  <entry><id>urn:example:tea</id><title>Green tea</title><link href="products/tea"/>
+    <updated>2026-01-01T12:00:00Z</updated><summary>New harvest available.</summary>
+  </entry>
+</feed>

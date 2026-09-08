@@ -1,0 +1,42 @@
+{
+  "extract_phone_numbers": [
+    {
+      "input": "Call us at +1 (555) 123-4567 or +44 20 7946 0958",
+      "want": ["+1 (555) 123-4567", "+44 20 7946 0958"]
+    },
+    {
+      "input": "Phone: 555-123-4567",
+      "want": ["555-123-4567"]
+    },
+    {
+      "input": "Contact: (800) 555-0199",
+      "want": ["(800) 555-0199"]
+    },
+    {
+      "input": "No phone numbers here",
+      "want": []
+    }
+  ],
+  "extract_dates": [
+    {
+      "input": "Date: 2024-01-15 and 01/15/2024",
+      "want": ["2024-01-15", "01/15/2024"]
+    },
+    {
+      "input": "Posted on 15/01/2024 (EU format)",
+      "want": ["15/01/2024"]
+    },
+    {
+      "input": "Meeting: January 15, 2024",
+      "want": ["January 15, 2024"]
+    },
+    {
+      "input": "Date: 15 Jan 2024",
+      "want": ["15 Jan 2024"]
+    },
+    {
+      "input": "No dates here",
+      "want": []
+    }
+  ]
+}

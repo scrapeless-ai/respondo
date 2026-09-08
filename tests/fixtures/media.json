@@ -1,0 +1,18 @@
+{
+  "extract_video_urls": [
+    {"input": "https://cdn.com/video.mp4", "want": ["https://cdn.com/video.mp4"]},
+    {"input": "https://stream.com/playlist.m3u8", "want": ["https://stream.com/playlist.m3u8"]},
+    {"input": "<video src=\"/media/clip.webm\"></video>", "want": ["/media/clip.webm"]},
+    {"input": "no video urls", "want": []}
+  ],
+  "extract_audio_urls": [
+    {"input": "https://cdn.com/song.mp3", "want": ["https://cdn.com/song.mp3"]},
+    {"input": "<audio src=\"/media/track.wav\"></audio>", "want": ["/media/track.wav"]},
+    {"input": "no audio urls", "want": []}
+  ],
+  "extract_stream_urls": [
+    {"input": "https://cdn.com/playlist.m3u8", "want": ["https://cdn.com/playlist.m3u8"]},
+    {"input": "https://cdn.com/manifest.mpd", "want": ["https://cdn.com/manifest.mpd"]},
+    {"input": "no stream urls", "want": []}
+  ]
+}

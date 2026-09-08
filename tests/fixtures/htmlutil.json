@@ -1,0 +1,28 @@
+{
+  "get_text": [
+    {
+      "html": "<html><head><script>ignore()</script></head><body><p>Hello <b>world</b></p></body></html>",
+      "want": "Hello world"
+    }
+  ],
+  "forms": [
+    {
+      "html": "<form action=\"/submit\" method=\"post\"><input name=\"a\" value=\"1\"><input type=\"checkbox\" name=\"c\" checked value=\"x\"></form>",
+      "base": "https://example.com",
+      "want": [
+        { "action": "https://example.com/submit", "method": "post", "fields": { "a": "1", "c": "x" } }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "html": "<table><tr><th>h1</th><th>h2</th></tr><tr><td>v1</td><td>v2</td></tr></table>",
+      "want": [
+        {
+          "headers": ["h1", "h2"],
+          "rows": [ { "h1": "v1", "h2": "v2" } ]
+        }
+      ]
+    }
+  ]
+}

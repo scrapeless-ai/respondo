@@ -1,0 +1,22 @@
+{
+  "extract_prices": [
+    {
+      "input": "$19.99",
+      "want": [{"raw": "$19.99", "value": 19.99, "currency": "USD"}]
+    },
+    {
+      "input": "EUR 29.99",
+      "want": [{"raw": "EUR 29.99", "value": 29.99, "currency": "EUR"}]
+    },
+    {
+      "input": "Price: $100 and $200",
+      "want": [{"raw": "$100", "value": 100, "currency": "USD"}, {"raw": "$200", "value": 200, "currency": "USD"}]
+    },
+    {"input": "no prices", "want": []}
+  ],
+  "extract_skus": [
+    {"input": "SKU: ABC-12345", "want": ["ABC-12345"]},
+    {"input": "Product: ITEM-9999", "want": ["ITEM-9999"]},
+    {"input": "no skus", "want": []}
+  ]
+}

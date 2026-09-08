@@ -1,0 +1,7 @@
+{
+  "id": {"attr": "data-id", "required": true},
+  "name": {"selector": "h2", "required": true},
+  "url": {"selector": "a", "attr": "href"},
+  "price": ".price",
+  "tags": {"selector": ".tag", "many": true}
+}

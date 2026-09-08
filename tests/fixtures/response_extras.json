@@ -1,0 +1,38 @@
+{
+  "hashing": [
+    { "body": "hello", "algo": "sha256", "hash": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824" },
+    { "body": "hello", "algo": "md5", "hash": "5d41402abc4b2a76b9719d911017c592" }
+  ],
+  "cleanup": [
+    { "html": "<html><head><style>.x{}</style></head><body><script>var a=1;</script><p>Hi<br>There</p></body></html>", "clean_text": "Hi There" }
+  ],
+  "links": [
+    {
+      "html": "<a href=\"/a\">A</a><img src=\"img.png\"><script src=\"/s.js\"></script>",
+      "base": "https://example.com/x/",
+      "all": ["https://example.com/a", "https://example.com/x/img.png", "https://example.com/s.js"],
+      "same_host": ["https://example.com/a", "https://example.com/x/img.png", "https://example.com/s.js"],
+      "extensions": ["https://example.com/x/img.png"]
+    }
+  ],
+  "json_in_html": [
+    {
+      "html": "<script type=\"application/json\">{\"a\":1}</script><script>var data = {\"b\":2};</script>",
+      "parsed": [{ "a": 1 }, { "b": 2 }]
+    }
+  ],
+  "charset": [
+    {
+      "headers": { "content-type": "text/html; charset=iso-8859-1" },
+      "body_b64": "SGVsbMOpcg==",
+      "text": "Hellér",
+      "charset": "iso-8859-1"
+    },
+    {
+      "headers": {},
+      "body_b64": "77u/77u/8J+YgCDvv73vv73vv70=",
+      "text": "��� ℂ ???",
+      "charset": "utf-8"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "extract_api_keys": [
+    {
+      "input": "OPENAI_API_KEY=fake_openai_key_abcdef123456789",
+      "want": [{"type": "openai", "key": "fake_openai_key_abcdef123456789"}]
+    },
+    {
+      "input": "AWS_ACCESS_KEY_ID=fake_aws_key_1234567890123456",
+      "want": [{"type": "aws", "key": "fake_aws_key_1234567890123456"}]
+    },
+    {
+      "input": "API_KEY=fake_generic_key_abc123def456",
+      "want": [{"type": "generic", "key": "fake_generic_key_abc123def456"}]
+    },
+    {
+      "input": "GITHUB_TOKEN=fake_github_token_abcdef123456789",
+      "want": [{"type": "github", "key": "fake_github_token_abcdef123456789"}]
+    },
+    {
+      "input": "GOOGLE_API_KEY=fake_google_key_1234567890abcdef",
+      "want": [{"type": "google", "key": "fake_google_key_1234567890abcdef"}]
+    },
+    {
+      "input": "No API keys here",
+      "want": []
+    }
+  ],
+  "extract_jwts": [
+    {
+      "input": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "want": ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"]
+    },
+    {
+      "input": "No JWT here",
+      "want": []
+    }
+  ],
+  "decode_jwt": [
+    {
+      "input": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "want": {
+        "header": {"alg": "HS256", "typ": "JWT"},
+        "payload": {"sub": "1234567890", "name": "John Doe", "iat": 1516239022}
+      }
+    },
+    {
+      "input": "invalid-token",
+      "want": null
+    },
+    {
+      "input": "",
+      "want": null
+    }
+  ],
+  "extract_bearer_tokens": [
+    {
+      "input": "Authorization: Bearer test_token_abc123xyz",
+      "want": ["test_token_abc123xyz"]
+    },
+    {
+      "input": "bearer test_token123 and Bearer test_token456",
+      "want": ["test_token123", "test_token456"]
+    },
+    {
+      "input": "No bearer token",
+      "want": []
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1b26"/>
+      <stop offset="100%" style="stop-color:#1e2a2a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="400" rx="16" fill="url(#bgGrad)"/>
+  <rect width="900" height="400" rx="16" fill="none" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Header -->
+  <text x="450" y="50" font-family="Arial Black, Helvetica, sans-serif" font-size="32" font-weight="900" fill="#10b981" text-anchor="middle">Features</text>
+
+  <!-- Feature cards -->
+  <!-- Card 1: Text Extraction -->
+  <rect x="30" y="80" width="200" height="140" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="130" y="115" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e4e4e7" text-anchor="middle">Text Extraction</text>
+  <text x="45" y="145" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">between</text>
+  <text x="45" y="163" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">betweens</text>
+  <text x="45" y="181" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">regex_first</text>
+  <text x="45" y="199" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">regex_all</text>
+
+  <!-- Card 2: HTML Parsing -->
+  <rect x="245" y="80" width="200" height="140" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="345" y="115" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e4e4e7" text-anchor="middle">HTML Parsing</text>
+  <text x="260" y="145" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">extract_links</text>
+  <text x="260" y="163" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">extract_forms</text>
+  <text x="260" y="181" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">extract_tables</text>
+  <text x="260" y="199" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">html_to_markdown</text>
+
+  <!-- Card 3: AI Parser -->
+  <rect x="460" y="80" width="200" height="140" rx="12" fill="#0d3d3d" stroke="#0d9488" stroke-width="1"/>
+  <text x="560" y="115" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#2dd4bf" text-anchor="middle">AI Parser</text>
+  <text x="475" y="145" font-family="Consolas, monospace" font-size="11" fill="#2dd4bf">parse_ai</text>
+  <text x="475" y="163" font-family="Consolas, monospace" font-size="11" fill="#2dd4bf">parse_ai_json</text>
+  <text x="475" y="181" font-family="Consolas, monospace" font-size="11" fill="#8b949e">10 providers</text>
+  <text x="475" y="199" font-family="Consolas, monospace" font-size="11" fill="#8b949e">JSON Schema</text>
+
+  <!-- Card 4: Validation -->
+  <rect x="675" y="80" width="200" height="140" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="775" y="115" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e4e4e7" text-anchor="middle">Validation</text>
+  <text x="690" y="145" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">is_valid_email</text>
+  <text x="690" y="163" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">is_valid_url</text>
+  <text x="690" y="181" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">is_valid_json</text>
+  <text x="690" y="199" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">extract_emails</text>
+
+  <!-- Bottom row -->
+  <!-- Card 5: JSON Utils -->
+  <rect x="140" y="240" width="200" height="140" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="240" y="275" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e4e4e7" text-anchor="middle">JSON Utilities</text>
+  <text x="155" y="305" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">find_first_json</text>
+  <text x="155" y="323" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">find_all_json</text>
+  <text x="155" y="341" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">json_get</text>
+  <text x="155" y="359" font-family="Consolas, monospace" font-size="11" fill="#8b949e">Safe nested access</text>
+
+  <!-- Card 6: Response -->
+  <rect x="355" y="240" width="200" height="140" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="455" y="275" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e4e4e7" text-anchor="middle">Response Class</text>
+  <text x="370" y="305" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">is_success()</text>
+  <text x="370" y="323" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">json()</text>
+  <text x="370" y="341" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">cookies()</text>
+  <text x="370" y="359" font-family="Consolas, monospace" font-size="11" fill="#8b949e">Header parsing</text>
+
+  <!-- Card 7: Encoding -->
+  <rect x="570" y="240" width="200" height="140" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="670" y="275" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e4e4e7" text-anchor="middle">Encoding</text>
+  <text x="585" y="305" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">url_encode</text>
+  <text x="585" y="323" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">url_decode</text>
+  <text x="585" y="341" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">b64_encode</text>
+  <text x="585" y="359" font-family="Consolas, monospace" font-size="11" fill="#79c0ff">b64_decode</text>
+</svg>

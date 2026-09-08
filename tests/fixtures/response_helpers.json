@@ -1,0 +1,31 @@
+{
+  "status_ranges": [
+    { "code": 100, "informational": true, "success": false, "redirect": false, "client_error": false, "server_error": false },
+    { "code": 204, "informational": false, "success": true, "redirect": false, "client_error": false, "server_error": false },
+    { "code": 301, "informational": false, "success": false, "redirect": true, "client_error": false, "server_error": false },
+    { "code": 404, "informational": false, "success": false, "redirect": false, "client_error": true, "server_error": false },
+    { "code": 503, "informational": false, "success": false, "redirect": false, "client_error": false, "server_error": true }
+  ],
+  "headers": [
+    { "headers": { "Content-Type": "text/html; charset=utf-8", "X-Test": ["A", "B"] }, "name": "content-type", "first": "text/html; charset=utf-8", "all": ["text/html; charset=utf-8"] },
+    { "headers": { "X-Test": ["A", "B"] }, "name": "X-Test", "first": "A", "all": ["A", "B"] },
+    { "headers": {}, "name": "missing", "first": "", "all": [] }
+  ],
+  "content_type": [
+    { "header": "text/html; charset=utf-8", "media_type": "text/html", "charset": "utf-8" },
+    { "header": "application/json", "media_type": "application/json", "charset": "" },
+    { "header": "", "media_type": "", "charset": "" }
+  ],
+  "cookies": [
+    {
+      "set_cookie": [
+        "sid=abc123; Path=/; HttpOnly",
+        "lang=en-US; Max-Age=3600; Secure"
+      ],
+      "parsed": [
+        { "name": "sid", "value": "abc123", "attrs": { "path": "/", "httponly": "" } },
+        { "name": "lang", "value": "en-US", "attrs": { "max-age": "3600", "secure": "" } }
+      ]
+    }
+  ]
+}

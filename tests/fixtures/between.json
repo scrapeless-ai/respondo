@@ -1,0 +1,78 @@
+{
+  "between": [
+    {
+      "s": "abc [x] def",
+      "left": "[",
+      "right": "]",
+      "want": "x"
+    },
+    {
+      "s": "start<value>end",
+      "left": "<",
+      "right": ">",
+      "want": "value"
+    },
+    {
+      "s": "missing",
+      "left": "[",
+      "right": "]",
+      "want": ""
+    }
+  ],
+  "betweens": [
+    {
+      "s": "<a>1</a><a>2</a>",
+      "left": "<a>",
+      "right": "</a>",
+      "want": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "s": "aa bb cc",
+      "left": "[",
+      "right": "]",
+      "want": []
+    },
+    {
+      "s": "x[l]y[r]z",
+      "left": "[",
+      "right": "]",
+      "want": [
+        "l",
+        "r"
+      ]
+    }
+  ],
+  "between_last": [
+    {
+      "s": "[first][second]",
+      "left": "[",
+      "right": "]",
+      "want": "second"
+    },
+    {
+      "s": "no end [value",
+      "left": "[",
+      "right": "]",
+      "want": ""
+    }
+  ],
+  "between_n": [
+    {
+      "s": "<i>1</i><i>2</i><i>3</i>",
+      "left": "<i>",
+      "right": "</i>",
+      "n": 2,
+      "want": "2"
+    },
+    {
+      "s": "<i>1</i><i>2</i>",
+      "left": "<i>",
+      "right": "</i>",
+      "n": 5,
+      "want": ""
+    }
+  ]
+}

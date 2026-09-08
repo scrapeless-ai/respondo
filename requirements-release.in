@@ -1,0 +1,6 @@
+# Build/validation tools only. Lock targets Python 3.12; no runtime dependencies.
+build==1.6.0
+setuptools==84.0.0
+wheel==0.48.0
+twine==7.0.0
+coverage==7.16.0

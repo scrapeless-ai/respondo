@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1b26"/>
+      <stop offset="70%" style="stop-color:#1a1b26"/>
+      <stop offset="100%" style="stop-color:#1e3a3a"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <filter id="iconShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#f97316" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="320" fill="url(#bgGrad)"/>
+
+  <!-- Subtle decorative circles -->
+  <circle cx="1100" cy="100" r="150" fill="#0d9488" fill-opacity="0.06"/>
+  <circle cx="1050" cy="280" r="100" fill="#10b981" fill-opacity="0.04"/>
+
+  <!-- App Icon -->
+  <g transform="translate(80, 95)" filter="url(#iconShadow)">
+    <rect width="130" height="130" rx="28" fill="url(#iconGrad)"/>
+    <g transform="translate(22, 28)">
+      <path d="M 30 0 L 10 37 L 30 74" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.95"/>
+      <path d="M 56 0 L 76 37 L 56 74" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.95"/>
+      <circle cx="43" cy="37" r="8" fill="#ffffff" fill-opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- Title -->
+  <text x="240" y="170" font-family="Arial Black, Helvetica, sans-serif" font-size="72" font-weight="900" fill="#10b981" letter-spacing="-1">Respondo</text>
+
+  <!-- Subtitle -->
+  <text x="240" y="210" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" fill="#9ca3af">Web scraping, text extraction &amp; AI-powered parsing</text>
+
+  <!-- Feature badges -->
+  <g transform="translate(240, 240)">
+    <rect width="100" height="36" rx="18" fill="#282a36" stroke="#3f4255" stroke-width="1"/>
+    <text x="50" y="24" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="500" fill="#e4e4e7" text-anchor="middle">Zero Deps</text>
+
+    <rect x="112" width="95" height="36" rx="18" fill="#282a36" stroke="#3f4255" stroke-width="1"/>
+    <text x="159.5" y="24" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="500" fill="#e4e4e7" text-anchor="middle">Type-Safe</text>
+
+    <rect x="219" width="95" height="36" rx="18" fill="#0d4a4a" stroke="#0d9488" stroke-width="1"/>
+    <text x="266.5" y="24" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#2dd4bf" text-anchor="middle">AI Parser</text>
+
+    <rect x="326" width="115" height="36" rx="18" fill="#282a36" stroke="#3f4255" stroke-width="1"/>
+    <text x="383.5" y="24" font-family="Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="500" fill="#e4e4e7" text-anchor="middle">30+ Functions</text>
+  </g>
+
+  <!-- Code block - simplified, no floating text -->
+  <rect x="820" y="75" width="320" height="170" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+
+  <text x="838" y="113" font-family="Consolas, Monaco, monospace" font-size="14" fill="#ff7b72">from <tspan fill="#e6edf3">respondo </tspan><tspan fill="#ff7b72">import</tspan><tspan fill="#e6edf3"> between</tspan></text>
+
+  <text x="838" y="145" font-family="Consolas, Monaco, monospace" font-size="14" fill="#8b949e"># Extract with ease</text>
+
+  <text x="838" y="177" font-family="Consolas, Monaco, monospace" font-size="14" fill="#e6edf3">title = <tspan fill="#79c0ff">between</tspan>(html,</text>
+
+  <text x="838" y="209" font-family="Consolas, Monaco, monospace" font-size="14" fill="#e6edf3">    <tspan fill="#a5d6ff">"&lt;title&gt;"</tspan>, <tspan fill="#a5d6ff">"&lt;/title&gt;"</tspan>)</text>
+</svg>

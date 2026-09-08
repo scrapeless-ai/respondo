@@ -1,0 +1,28 @@
+{
+  "csrf": [
+    {
+      "html": "<form><input type=\"hidden\" name=\"csrf_token\" value=\"abc123\"></form>",
+      "want": "abc123"
+    },
+    {
+      "html": "<meta name=\"csrf-token\" content=\"xyz\"></meta>",
+      "want": "xyz"
+    },
+    {
+      "html": "<script>window.csrfToken = 'tok-1';</script>",
+      "want": "tok-1"
+    }
+  ],
+  "url": [
+    { "params": { "a": "1", "b": ["2", "3"] }, "encoded": "a=1&b=2&b=3" },
+    { "params": { "q": "a b", "empty": "" }, "encoded": "q=a+b&empty=" }
+  ],
+  "url_decode": [
+    { "query": "a=1&b=2&b=3", "want": { "a": ["1"], "b": ["2", "3"] } },
+    { "query": "q=a+b&empty=", "want": { "q": ["a b"], "empty": [""] } }
+  ],
+  "base64": [
+    { "data": "hello", "encoded": "aGVsbG8=", "urlsafe": false },
+    { "data": "hi?", "encoded": "aGk_", "urlsafe": true }
+  ]
+}

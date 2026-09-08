@@ -1,0 +1,27 @@
+{
+  "extract_canonical_url": [
+    {"input": "<link rel=\"canonical\" href=\"https://example.com/page\">", "want": "https://example.com/page"},
+    {"input": "no canonical", "want": ""}
+  ],
+  "extract_og_tags": [
+    {
+      "input": "<meta property=\"og:title\" content=\"My Page\"><meta property=\"og:image\" content=\"https://example.com/img.jpg\">",
+      "want": {"title": "My Page", "image": "https://example.com/img.jpg"}
+    },
+    {"input": "no og tags", "want": {}}
+  ],
+  "extract_twitter_cards": [
+    {
+      "input": "<meta name=\"twitter:card\" content=\"summary\"><meta name=\"twitter:site\" content=\"@example\">",
+      "want": {"card": "summary", "site": "@example"}
+    },
+    {"input": "no twitter cards", "want": {}}
+  ],
+  "extract_schema_org": [
+    {
+      "input": "<script type=\"application/ld+json\">{\"@type\": \"Product\", \"name\": \"Widget\"}</script>",
+      "want": [{"@type": "Product", "name": "Widget"}]
+    },
+    {"input": "no schema.org", "want": []}
+  ]
+}
