@@ -1,51 +1,59 @@
+# Scrapeless Respondo
+
 <div align="center">
 
-<h1><img src="assets/scrapeless-respondo-banner.png" alt="Scrapeless Respondo — Turn web responses into structured data." width="100%"></h1>
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-171717?style=flat-square)](https://www.python.org/)
+[![21 CLI modes](https://img.shields.io/badge/CLI_modes-21-12A594?style=flat-square)](#command-line)
+![0 runtime dependencies](https://img.shields.io/badge/Runtime_dependencies-0-12A594?style=flat-square)
+[![MIT License](https://img.shields.io/badge/License-MIT-12A594?style=flat-square)](LICENSE)
 
 <br>
 
-[![Python](https://img.shields.io/badge/Python-3.9%2B-171717?style=flat-square)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-137C66?style=flat-square)](LICENSE)
-![Runtime dependencies](https://img.shields.io/badge/Runtime_dependencies-0-137C66?style=flat-square)
+<img src="assets/scrapeless-respondo-wallpaper.png" alt="Scrapeless Respondo — Turn web responses into structured data. Extract locally. Export cleanly. Illustration: HTML input becomes structured records and JSON or CSV output." width="100%">
 
-[Quick Start](#quick-start) · [Scrapeless Workflows](docs/SCRAPELESS.md) · [API Guide](docs/API.md) · [CLI](#command-line)
+**Turn HTML and JSON into clean, usable datasets — locally, with Python.**
 
-[Scrapeless](https://www.scrapeless.com/en) · [Platform Docs](https://docs.scrapeless.com/) · [GitHub](https://github.com/scrapeless-ai/respondo)
+[Scrapeless](https://www.scrapeless.com/en) · [Quick Start](#quick-start) · [CLI](#command-line) · [API Guide](docs/API.md) · [Optional AI](#ai-parsing)
 
 </div>
 
-Respondo is Scrapeless's local Python extraction toolkit. Parse the HTML and JSON
-returned by your web-data workflow, reshape the results, and export records your
-applications can use. One library and a 21-mode CLI, with no runtime dependencies.
+---
 
-| Extract | Transform | Export |
-|:--------|:----------|:-------|
-| HTML records, page summaries, feeds and sitemaps | JSON queries, field projection, merge patches and URL cleanup | JSON, JSON Lines and spreadsheet-ready CSV |
+Respondo is Scrapeless's local Python extraction toolkit. Give it the HTML or JSON
+from your web-data workflow; extract the fields you need, reshape the results,
+and export records your applications can use. No runtime dependencies. No account
+needed for local extraction.
+
+| Start with | What you can do |
+|:-----------|:----------------|
+| HTML pages | Extract repeated records with CSS-subset selectors and reusable field recipes |
+| JSON responses | Query nested values, project fields, flatten objects and apply merge patches |
+| Pages, feeds & sitemaps | Collect titles, headings, metadata, links and discovery data |
+| Files & directories | Run 21 CLI modes, process batches, export JSON, JSON Lines or CSV |
 
 Use [Scrapeless](https://www.scrapeless.com/en) to retrieve web content; use
 Respondo to process that content locally. Respondo does not fetch URLs, launch
 browsers, or include a Scrapeless API client. [See the workflow guide](docs/SCRAPELESS.md).
 
----
-
 ## Installation
 
-```bash
-pip install respondo
-```
-
-To use the new 0.6 features from this checkout before publication to PyPI:
+Requires **Python 3.9+**. For the 0.6 features documented here, install from the
+root of this checkout:
 
 ```bash
 python -m pip install .
 ```
 
-HTML, JSON, and CLI features run locally without credentials or network calls.
-AI parsing is optional and requires the selected provider's credentials.
+The existing PyPI package can be installed with `python -m pip install respondo`.
+The new 0.6 features in this checkout have **not yet been published to PyPI**.
 
----
+HTML, JSON, and CLI features run locally without credentials or network calls.
+AI parsing is [optional](#ai-parsing) and requires your chosen provider's API key
+and an explicitly configured model.
 
 ## Quick Start
+
+Extract a product name and price, then write CSV:
 
 ```python
 from respondo import extract_records, records_to_csv
@@ -57,13 +65,23 @@ records = extract_records(html, 'article', {
     'price': '.price',
 })
 print(records_to_csv(records), end='')
-# name,price
-# Green tea,12.50
 ```
 
----
+```csv
+name,price
+Green tea,12.50
+```
+
+For a complete local pipeline, run `python examples/extraction_pipeline.py`.
+For reusable field mappings, start with the [card recipe](examples/card-fields.json).
 
 ## New in 0.6
+
+Structured records, JSON queries, page summaries, feeds, sitemaps and local batch
+processing. See the [changelog](CHANGELOG.md) for the full release notes.
+
+<details>
+<summary>Explore the extraction and transformation examples</summary>
 
 ### From web pages to usable datasets
 
@@ -147,6 +165,8 @@ resource URLs). Duplicate anchors stay in document order, image alt text is
 included in labels, and only HTTP(S), mailto, tel, and relative URLs are returned.
 The caller's explicit `base` resolves relative URLs; HTML `<base>` tags are ignored.
 
+</details>
+
 ## Command Line
 
 Use the installed `respondo` command or `python -m respondo`. Input is a local
@@ -169,6 +189,9 @@ respondo headings examples/catalog.html > headings.json
 respondo text examples/catalog.html --format text
 respondo markdown examples/catalog.html --format text
 ```
+
+<details>
+<summary>All 21 modes, output formats and exit codes</summary>
 
 | Mode | Output |
 |:-----|:-------|
@@ -200,6 +223,8 @@ The library's `iter_jsonl` provides lazy iteration for large line-oriented input
 pretty-printing. Empty matches are a successful empty result; malformed JSON,
 invalid paths, unreadable files, and encoding errors produce an error on stderr
 and exit status 1. Invalid arguments exit 2. Errors do not echo input contents.
+
+</details>
 
 ### Batch extraction
 
@@ -233,6 +258,9 @@ Run **all** tests with `python scripts/run_tests.py`; unittest discovery alone
 does not execute the inherited script suites. Optional AI requests transmit data
 to third-party providers and have provider-specific schema support. JWT decoding
 is not signature verification; see the security guide before using those helpers.
+
+<details>
+<summary>Browse utility examples: text, HTML, JSON, responses and detection</summary>
 
 ### Text Extraction
 
@@ -554,6 +582,8 @@ extract_prices("Price: $19.99 and EUR 29.99")
 extract_skus("SKU: ABC-12345")  # => ["ABC-12345"]
 ```
 
+</details>
+
 ---
 
 ## AI Parsing
@@ -564,6 +594,9 @@ Choose model names in your application environment, for example `OPENAI_MODEL`
 and `ANTHROPIC_MODEL`. Respondo reads these automatically when `model=` is omitted;
 an explicit model takes precedence. **There is no built-in model selection.**
 Supply API keys through your runtime/secret manager, never committed files.
+
+<details>
+<summary>Python examples, structured output and error handling</summary>
 
 ```python
 import os
@@ -617,6 +650,8 @@ request failures, legacy mode still returns `""` / `None`; `strict=True` raises
 All adapters forward schemas, but some use prompt instructions; Respondo checks
 JSON syntax/finite numbers, **not schema conformance**. Validate returned data in
 your application. Live provider compatibility is not covered by mocked tests.
+
+</details>
 
 ### Supported Providers
 
@@ -729,17 +764,6 @@ your application. Live provider compatibility is not covered by mocked tests.
 
 ---
 
-## Features Overview
-
-| Workflow | Included capabilities |
-|:---------|:----------------------|
-| Web responses → records | CSS-subset selectors, reusable field recipes, charset-aware response helpers |
-| Records → datasets | JSON Pointer, projection, flattening, merge patch, CSV and JSON Lines |
-| Pages → discovery data | Titles, headings, metadata, links, RSS/Atom feeds and sitemaps |
-| Local automation | 21 CLI modes, stdin support, deterministic output and explicit errors |
-
----
-
 ## Error Handling
 
 Most extraction helpers return empty values for missing content, which is useful
@@ -781,6 +805,8 @@ for the official Scrapeless logo source and banner generation details.
 
 <div align="center">
 
-**MIT License** - Made for web scrapers
+**Respondo by Scrapeless**
+
+[Scrapeless](https://www.scrapeless.com/en) · [Platform Docs](https://docs.scrapeless.com/) · [MIT License](LICENSE) · [Official logo](assets/scrapeless-logo.svg)
 
 </div>
