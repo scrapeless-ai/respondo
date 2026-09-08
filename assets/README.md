@@ -4,10 +4,11 @@
 
 The repository is presented as **Respondo by Scrapeless** for the
 `scrapeless-ai/respondo` publication target. The README opens with a unified
-**Scrapeless Respondo** raster banner, with charcoal, white and restrained teal
-styling. Its accessible image heading supplies the product name and tagline
-without repeating a separate logo/title stack. The exact official SVG wordmark
-remains available below as the authoritative source. The older rainbow feature illustration is
+**Scrapeless Respondo** raster banner, with a dark technical grid, white typography
+and teal accents. A semantic README title and badges precede the wallpaper-style
+hero. The exact official SVG wordmark remains the authoritative logo source;
+the new hero uses brand typography rather than an invented emblem.
+The older rainbow feature illustration is
 retained for source-history continuity but no longer displayed in the README.
 Brand marks remain their owners' property; the existing code license and notice
 are unchanged. These assets do not establish a support SLA or publication status.
@@ -16,7 +17,15 @@ are unchanged. These assets do not establish a support SLA or publication status
   https://www.scrapeless.com/en on 2026-09-07. Its path geometry and teal colors
   are unchanged. The `--grey-12` theme variable is resolved to `#171717` for
   standalone use on a light background.
-- `scrapeless-respondo-banner.png`: current README hero, generated with the
+- `scrapeless-respondo-wallpaper.png`: current README hero, generated from scratch
+  with the built-in image tool on 2026-09-08. Its dark grid, teal lighting and
+  split headline/panel layout are inspired by the user's supplied reference.
+  The panel illustrates local HTML-to-records-to-export processing; it is not a
+  screenshot of a Respondo graphical application. All shown data is synthetic.
+  No old artwork was edited or supplied to the generator. The official SVG is
+  unchanged and linked separately from the README. Full prompt in
+  [banner-prompt.md](banner-prompt.md).
+- `scrapeless-respondo-banner.png`: previous README hero, generated with the
   built-in image tool on 2026-09-08 using the prior banner as the redesign target
   and a browser-rendered official SVG as the logo reference. It unifies the
   Scrapeless and Respondo names and illustrates HTML to JSON/CSV transformation.
@@ -32,7 +41,7 @@ are unchanged. These assets do not establish a support SLA or publication status
   the README. The original generated output was preserved outside the repo.
 - `banner-dark.svg`, `features.svg`, `social-preview.svg`: retained from the
   supplied source archive. The README now uses the new banner and a text-based
-  feature table. The banner's light canvas remains legible in both themes.
+  feature table. The current dark hero is a self-contained canvas in both themes.
 
 ## Previous banner prompt
 

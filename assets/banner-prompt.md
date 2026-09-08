@@ -1,5 +1,24 @@
 # Scrapeless Respondo banner prompts
 
+## Current dark wallpaper — generated from scratch
+
+Selected asset: `scrapeless-respondo-wallpaper.png`. Generated with the built-in
+image tool on 2026-09-08, without CLI fallback or credentials. The user supplied
+a visual reference; only its visual direction was described in the prompt.
+No reference images, repository source or private data were sent to generation.
+The brand line uses typography, not a generated logo; `scrapeless-logo.svg`
+remains the unchanged official source. The old banners are retained.
+
+### Exact generation prompt
+
+Use case: ads-marketing.
+Asset type: finished wide GitHub README hero / wallpaper for the Python library Scrapeless Respondo, landscape 16:9, high resolution.
+Primary request: Generate an entirely new design from scratch. A premium dark developer-tool composition: charcoal-black background, very subtle square technical grid, a restrained atmospheric teal glow concentrated toward the upper right, crisp white typography, thin teal accents. No browser chrome or GitHub screenshot.
+Composition: generous safe margins. Left 48% contains a small understated uppercase brand line "SCRAPELESS RESPONDO", then large bold modern sans-serif headline split over three clean lines "Turn web" / "responses into" / "structured data." Below: smaller readable text "Extract locally. Export cleanly." At lower left three small outlined dark chips "PYTHON" / "ZERO DEPENDENCIES" / "CLI INCLUDED". Right 43% contains an elegant floating flat dark terminal/code panel with subtle depth and fine teal border highlights, illustrating a LOCAL data pipeline (not an actual GUI application). Header "respondo" in white with a small teal status dot. Three ordered separated sections: "HTML INPUT" with simple muted code <h2>Green tea</h2> and <span>12.50</span>; thin downward teal connector; "EXTRACT RECORDS" with two tidy rows name : Green tea and price : 12.50; thin downward teal connector; "JSON / CSV" with a small simple two-row table name,price and Green tea,12.50. Use beautiful legible monospace in the panel, generous whitespace, restrained syntax colors. It must feel like a polished developer product banner, not a busy dashboard.
+Text exactly as quoted, accurate spelling of Scrapeless and Respondo. Do not invent logos or emblems; brand line is typography only because the exact official logo will be presented by the surrounding README. No extra text, no fake buttons, no made-up metrics, no cartoon, no purple, no aggressive neon, no watermark. All background and illustration original.
+
+## Previous light banner
+
 Generated using the built-in image tool on 2026-09-08. No CLI fallback or project
 credentials were used. Only the prior project artwork and a rendered public
 Scrapeless logo were supplied as references; no source code or private data.
